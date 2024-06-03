@@ -16,6 +16,7 @@
 package slice
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -24,6 +25,7 @@ import (
 func TestShuffle(t *testing.T) {
 	sli := []int{1, 2, 3, 4, 5}
 	Shuffle(sli, 1)
+	fmt.Println(sli)
 	assert.NotEqual(t, []int{1, 2, 3, 4, 5}, sli)
 }
 

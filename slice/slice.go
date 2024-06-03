@@ -21,10 +21,10 @@ import (
 
 // Shuffle shuffles the given slice in place
 func Shuffle[T any](slice []T, seed int64) {
-	rand.Seed(seed)
+	rand.New(rand.NewSource(seed))
 	for i := 0; i < len(slice); i++ {
 		idx := rand.Intn(len(slice) - i)
-		slice[len(slice)-i-1], slice[idx] = slice[idx], slice[len(slice)-i-1]
+		slice[len(slice)-1-i], slice[idx] = slice[idx], slice[len(slice)-1-i]
 	}
 }
 
